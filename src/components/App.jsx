@@ -1,11 +1,7 @@
-import '../scss/App.scss'
+import "../scss/App.scss";
 
 function App() {
-  return (
-    <div>
-      Escribe aquí tu código
-    </div>
-  )
+  return <div>Frases de Friends</div>;
 }
 
-export default App
+export default App;
