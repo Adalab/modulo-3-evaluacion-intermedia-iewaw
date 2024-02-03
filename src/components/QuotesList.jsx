@@ -1,11 +1,7 @@
 import QuoteItem from "./QuoteItem";
 
-function QuotesList() {
-  return (
-    <>
-      <QuoteItem></QuoteItem>
-    </>
-  );
+function QuotesList(props) {
+  return <>{props.phrases.map((phrase) => console.log(phrase))}</>;
 }
 
 export default QuotesList;
