@@ -4,16 +4,25 @@ import Filters from "./Filters";
 import Header from "./Header";
 import QuotesList from "./QuotesList";
 
-import dataPhrases from "../data/phrases.json";
+import dataQuotes from "../data/quotes.json";
 
 function App() {
-  const [phrases, setPhrases] = useState(dataPhrases);
+  const [quotes] = useState(dataQuotes);
+  const [filteredQuote, setFilteredQuote] = useState("");
+
+  const filteredQuotes = quotes.filter((quote) =>
+    quote.quote.includes(filteredQuote)
+  );
+
+  const handleSearch = (value) => {
+    setFilteredQuote(value);
+  };
 
   return (
     <div>
       <Header />
-      <Filters />
-      <QuotesList phrases={phrases} />
+      <Filters handleFilter={handleSearch} />
+      <QuotesList quotes={filteredQuotes} />
     </div>
   );
 }
