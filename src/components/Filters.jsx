@@ -1,6 +1,10 @@
 function Filters({ handleFilter }) {
   const handleInputQuote = (event) => {
-    handleFilter(event.currentTarget.value);
+    handleFilter("quote", event.currentTarget.value);
+  };
+
+  const handleInputCharacter = (event) => {
+    handleFilter("character", event.currentTarget.value);
   };
 
   return (
@@ -16,14 +20,14 @@ function Filters({ handleFilter }) {
       />
       <h2>Filtrar por personaje:</h2>
       <label htmlFor="character"></label>
-      <select name="character" id="character">
-        <option>Todos</option>
-        <option>Ross</option>
-        <option>Monica</option>
-        <option>Joey</option>
-        <option>Phoebe</option>
-        <option>Chandler</option>
-        <option>Rachel</option>
+      <select name="character" id="character" onInput={handleInputCharacter}>
+        <option value={"Todos"}>Todos</option>
+        <option value={"Ross"}>Ross</option>
+        <option value={"Monica"}>Monica</option>
+        <option value={"Joey"}>Joey</option>
+        <option value={"Phoebe"}>Phoebe</option>
+        <option value={"Chandler"}>Chandler</option>
+        <option value={"Rachel"}>Rachel</option>
       </select>
     </form>
   );

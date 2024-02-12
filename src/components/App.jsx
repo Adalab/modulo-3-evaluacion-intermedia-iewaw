@@ -9,17 +9,31 @@ import dataQuotes from "../data/quotes.json";
 function App() {
   const [quotes] = useState(dataQuotes);
   const [filteredQuote, setFilteredQuote] = useState("");
+  const [selectedCharacted, setSelectedCharacter] = useState("Todos");
 
-  const filteredQuotes = quotes.filter((quote) =>
-    quote.quote.includes(filteredQuote)
-  );
+  const filteredQuotes = quotes
+    .filter((quote) =>
+      quote.quote.toLowerCase().includes(filteredQuote.toLowerCase())
+    )
+    .filter((quote) =>
+      selectedCharacted === "Todos"
+        ? true
+        : quote.character === selectedCharacted
+    );
 
-  const handleSearch = (value) => {
-    setFilteredQuote(value);
+  const handleSearch = (filterType, value) => {
+    switch (filterType) {
+      case "quote":
+        setFilteredQuote(value);
+        break;
+      case "character":
+        setSelectedCharacter(value);
+        break;
+    }
   };
 
   return (
-    <div>
+    <div className="body">
       <Header />
       <Filters handleFilter={handleSearch} />
       <QuotesList quotes={filteredQuotes} />
