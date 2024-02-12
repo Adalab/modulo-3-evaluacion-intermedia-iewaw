@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "../scss/Filters.scss";
 
 function Filters({ handleFilter }) {
@@ -34,5 +36,9 @@ function Filters({ handleFilter }) {
     </form>
   );
 }
+
+Filters.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
+};
 
 export default Filters;

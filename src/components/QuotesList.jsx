@@ -14,10 +14,10 @@ function QuotesList({ quotes }) {
 }
 
 QuotesList.propTypes = {
-  phrases: PropTypes.arrayOf(
+  quotes: PropTypes.arrayOf(
     PropTypes.shape({
       quote: PropTypes.string.isRequired,
-      character: PropTypes.string,
+      character: PropTypes.string.isRequired,
     })
   ),
 };
