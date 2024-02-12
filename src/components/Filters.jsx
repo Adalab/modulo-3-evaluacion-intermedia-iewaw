@@ -1,3 +1,5 @@
+import "../scss/Filters.scss";
+
 function Filters({ handleFilter }) {
   const handleInputQuote = (event) => {
     handleFilter("quote", event.currentTarget.value);

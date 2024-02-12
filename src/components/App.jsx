@@ -1,10 +1,12 @@
 import { useState } from "react";
-import "../scss/App.scss";
+
 import Filters from "./Filters";
 import Header from "./Header";
 import QuotesList from "./QuotesList";
 
 import dataQuotes from "../data/quotes.json";
+
+import "../scss/App.scss";
 
 function App() {
   const [quotes] = useState(dataQuotes);

@@ -1,6 +1,8 @@
 import QuoteItem from "./QuoteItem";
 import PropTypes from "prop-types";
 
+import "../scss/QuotesList.scss";
+
 function QuotesList({ quotes }) {
   const renderedQuotes = quotes.map((quote, index) => (
     <li key={index} className="quoteLi">

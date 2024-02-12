@@ -1,0 +1,9 @@
+@import 'core/reset';
+
+.form {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
