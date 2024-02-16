@@ -2,12 +2,14 @@ import PropTypes from "prop-types";
 
 import "../scss/Filters.scss";
 
-function Filters({ handleFilter }) {
+function Filters({ handleFilter, filteredQuote }) {
   const handleInputQuote = (event) => {
+    event.preventDefault();
     handleFilter("quote", event.currentTarget.value);
   };
 
   const handleInputCharacter = (event) => {
+    event.preventDefault();
     handleFilter("character", event.currentTarget.value);
   };
 

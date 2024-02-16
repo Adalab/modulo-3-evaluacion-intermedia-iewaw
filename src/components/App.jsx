@@ -11,16 +11,16 @@ import "../scss/App.scss";
 function App() {
   const [quotes] = useState(dataQuotes);
   const [filteredQuote, setFilteredQuote] = useState("");
-  const [selectedCharacted, setSelectedCharacter] = useState("Todos");
+  const [selectedCharacter, setSelectedCharacter] = useState("Todos");
 
   const filteredQuotes = quotes
     .filter((quote) =>
       quote.quote.toLowerCase().includes(filteredQuote.toLowerCase())
     )
     .filter((quote) =>
-      selectedCharacted === "Todos"
+      selectedCharacter === "Todos"
         ? true
-        : quote.character === selectedCharacted
+        : quote.character === selectedCharacter
     );
 
   const handleSearch = (filterType, value) => {
@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="body">
       <Header />
-      <Filters handleFilter={handleSearch} />
+      <Filters handleFilter={handleSearch} filteredQuote={filteredQuote} />
       <QuotesList quotes={filteredQuotes} />
     </div>
   );
