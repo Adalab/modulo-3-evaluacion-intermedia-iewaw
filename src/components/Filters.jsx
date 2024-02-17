@@ -13,8 +13,12 @@ function Filters({ handleFilter, filteredQuote }) {
     handleFilter("character", event.currentTarget.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <h2>Filtrar por frase:</h2>
       <label htmlFor="quote"></label>
       <input
