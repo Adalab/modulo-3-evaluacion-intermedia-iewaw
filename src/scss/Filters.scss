@@ -2,8 +2,14 @@
 
 .form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
     margin-top: 20px;
+}
+
+@media all and (min-width: 720px) {
+    .form {
+        flex-direction: row;
+    }
 }

@@ -3,13 +3,14 @@ import { useState } from "react";
 import Filters from "./Filters";
 import Header from "./Header";
 import QuotesList from "./QuotesList";
+import NewCard from "./NewCard";
 
 import dataQuotes from "../data/quotes.json";
 
 import "../scss/App.scss";
 
 function App() {
-  const [quotes] = useState(dataQuotes);
+  const [quotes, setQuotes] = useState(dataQuotes);
   const [filteredQuote, setFilteredQuote] = useState("");
   const [selectedCharacter, setSelectedCharacter] = useState("Todos");
 
@@ -38,6 +39,7 @@ function App() {
     <div className="body">
       <Header />
       <Filters handleFilter={handleSearch} filteredQuote={filteredQuote} />
+      <NewCard setQuotes={setQuotes} />
       <QuotesList quotes={filteredQuotes} />
     </div>
   );
